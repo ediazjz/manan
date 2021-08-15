@@ -11,6 +11,8 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="description" content="Manan is a social web app for meditation. " />
+
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
