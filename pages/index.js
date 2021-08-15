@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Layout } from '../components'
+import { Layout, SocialLogIn } from '../components'
 
 export default function Home() {
   return (
@@ -11,9 +11,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>
-          Hello, world!
-        </h1>
+        <SocialLogIn network="google" />
+        <SocialLogIn network="facebook" />
+        <SocialLogIn network="twitter" />
       </main>
     </Layout>
   )
