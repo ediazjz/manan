@@ -1,20 +1,18 @@
 import Head from 'next/head'
-import { Layout } from '../components'
+import { Layout } from '../../components'
 
-export default function Home() {
+const Settings = () => {
   return (
     <Layout>
       <Head>
-        <title>Manan</title>
+        <title>Manan | Settings</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <main>
-        <h1>
-          Hello, world!
-        </h1>
-      </main>
+      <h1>This will be the Settings Page</h1>
     </Layout>
   )
 }
+
+export default Settings
