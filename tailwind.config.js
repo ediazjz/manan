@@ -2,6 +2,17 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+        sm: '1.75rem',
+        md: '2rem',
+        lg: '2.25rem',
+        xl: '2.5rem',
+        '2xl': '3rem',
+      }
+    },
     fontSize: {
       '2xs': '.625rem',
       'xs': '.75rem',
