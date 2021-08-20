@@ -55,6 +55,9 @@ module.exports = {
           light: '#E3EDF2',
           dark: '#2B2D3C'
         }
+      },
+      fontFamily: {
+        'brand': ['Amiko', 'ui-sans-serif'],
       }
     },
   },
