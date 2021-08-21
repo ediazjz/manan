@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Manan</title>
+        <title>manan</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
