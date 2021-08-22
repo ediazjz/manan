@@ -69,7 +69,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        'brand': ['Amiko', 'ui-sans-serif'],
+        'brand-body': ['Amiko', 'ui-sans-serif'],
+        'brand-title': ['Rubik', 'ui-sans-serif'],
       }
     },
   },
