@@ -16,5 +16,5 @@ jobs:
       - uses: alex-page/github-project-automation-plus@v0.8.1
         with:
           project: manan
-          column: In review
+          column: Reviewing
           repo-token: ${{ secrets.MANAN_PROJECT }}
