@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,12 +7,12 @@
 
 @layer base {
   body {
-    @apply font-brand !important;
+    @apply font-brand-body !important;
     @apply bg-neutral-light text-base md:text-lg xl:text-xl text-inky font-normal;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    @apply font-brand-title font-medium !important;
   }
   h1, .h1 {
     @apply text-5xl md:text-6xl xl:text-7xl;
@@ -34,5 +35,26 @@
 
   .smoll {
     @apply text-2xs md:text-xs xl:text-sm;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded text-center font-bold disabled:opacity-50 transition-all cursor-pointer;
+  }
+  .btn-primary {
+    @apply border-accent hover:border-accent-dark bg-accent hover:bg-accent-dark text-white;
+  }
+  .btn-primary-outlined {
+    @apply border-accent hover:border-accent-dark bg-transparent text-accent hover:text-accent-dark;
+  }
+  .btn-secondary {
+    @apply border-secondary-light hover:border-secondary bg-secondary-light hover:bg-secondary text-white;
+  }
+  .btn-secondary-outlined {
+    @apply border-secondary-light hover:border-secondary bg-transparent text-secondary-light hover:text-secondary;
+  }
+  .btn-ghost {
+    @apply border-none text-inky-lighter hover:text-inky;
   }
 }
