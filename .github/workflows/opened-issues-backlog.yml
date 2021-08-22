@@ -11,5 +11,5 @@ jobs:
       - uses: alex-page/github-project-automation-plus@v0.8.1
         with:
           project: manan
-          column: Backlog
+          column: Done
           repo-token: ${{ secrets.MANAN_PROJECT }}
