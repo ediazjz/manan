@@ -17,4 +17,4 @@ jobs:
         with:
           project: manan
           column: In review
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.MANAN_PROJECT }}
