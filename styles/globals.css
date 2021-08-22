@@ -37,3 +37,24 @@
     @apply text-2xs md:text-xs xl:text-sm;
   }
 }
+
+@layer components {
+  .btn {
+    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded text-center font-bold disabled:opacity-50 transition-all cursor-pointer;
+  }
+  .btn-primary {
+    @apply border-accent hover:border-accent-dark bg-accent hover:bg-accent-dark text-white;
+  }
+  .btn-primary-outlined {
+    @apply border-accent hover:border-accent-dark bg-transparent text-accent hover:text-accent-dark;
+  }
+  .btn-secondary {
+    @apply border-secondary-light hover:border-secondary bg-secondary-light hover:bg-secondary text-white;
+  }
+  .btn-secondary-outlined {
+    @apply border-secondary-light hover:border-secondary bg-transparent text-secondary-light hover:text-secondary;
+  }
+  .btn-ghost {
+    @apply border-none text-inky-lighter hover:text-inky;
+  }
+}
