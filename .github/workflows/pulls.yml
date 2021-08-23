@@ -1,0 +1,26 @@
+name: Pull Request Automation
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  pull-request-opened:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: manan
+          column: In review
+          repo-token: ${{ secrets.MANAN_PROJECT }}
+
+  pull-request-closed:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: manan
+          action: archive
+          repo-token: ${{ secrets.MANAN_PROJECT }}

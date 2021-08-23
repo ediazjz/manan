@@ -1,0 +1,46 @@
+name: Issue Automation
+
+on:
+  issues:
+    types: [opened, assigned, closed, reopened]
+
+jobs:
+  issue-opened:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: manan
+          column: To do
+          repo-token: ${{ secrets.MANAN_PROJECT }}
+
+  issue-assigned:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'assigned'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: manan
+          column: In Progress
+          repo-token: ${{ secrets.MANAN_PROJECT }}
+
+  issue-closed:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: manan
+          column: Done
+          repo-token: ${{ secrets.MANAN_PROJECT }}
+
+  issue-reopened:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'reopened'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: manan
+          column: To do
+          repo-token: ${{ secrets.MANAN_PROJECT }}
