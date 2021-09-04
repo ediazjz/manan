@@ -10,12 +10,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <main className="container">
-        <Logo className="text-primary" />
+      <main className="container h-screen pb-16 flex flex-col items-center justify-center">
+        <Logo className="text-primary mb-8" />
+        <Logo type="logotype" width="256" className="text-primary mb-12" />
 
-        <SocialLogIn network="google" className="btn-social" />
-        <SocialLogIn network="facebook" className="btn-social" />
-        <SocialLogIn network="twitter" className="btn-social" />
+        <div className="w-full">
+          <SocialLogIn network="google" className="btn-social" />
+          <SocialLogIn network="facebook" className="btn-social" />
+          <SocialLogIn network="twitter" className="btn-social" />
+        </div>
       </main>
     </>
   )
