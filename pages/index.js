@@ -1,7 +1,13 @@
 import Head from 'next/head'
+import { useContext } from 'react'
+
+import { UserContext } from '../lib/context'
+
 import { Logo, SocialLogIn } from '../components'
 
 export default function Home() {
+  const { user, username } = useContext(UserContext)
+
   return (
     <>
       <Head>
