@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main className="container">
-        <Logo className="text-red-500" />
+        <Logo className="text-primary" />
 
         <SocialLogIn network="google" className="btn-social" />
         <SocialLogIn network="facebook" className="btn-social" />

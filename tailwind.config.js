@@ -31,25 +31,25 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          lighter: '#95B1C0',
-          light: '#7197AB',
-          DEFAULT: '#4E7D96',
-          dark: '#3E6478',
-          darker: '#2F4B5A',
+          lighter: '#6695C1',
+          light: '#3371AD',
+          DEFAULT: '#004E98',
+          dark: '#003E7A',
+          darker: '#002F5B',
         },
         secondary: {
-          lighter: '#41445E',
-          light: '#292C4A',
-          DEFAULT: '#111536',
-          dark: '#0E112B',
-          darker: '#0A0D20',
+          lighter: '#17A8C5',
+          light: '#1596AF',
+          DEFAULT: '#128399',
+          dark: '#107083',
+          darker: '#0D5E6E',
         },
         accent: {
-          lighter: '#FFB593',
-          light: '#FF9D6F',
-          DEFAULT: '#FF844B',
-          dark: '#CC6A3C',
-          darker: '#B35C35',
+          lighter: '#F19C6E',
+          light: '#EC7B3D',
+          DEFAULT: '#E75A0D',
+          dark: '#D0510C',
+          darker: '#B9480A',
         },
         inky: {
           lighter: '#565656',
@@ -64,8 +64,8 @@ module.exports = {
           error: '#C94145',
         },
         neutral: {
-          light: '#E3EDF2',
-          dark: '#2B2D3C'
+          lighter: '#E6EDF5',
+          light: '#CCDCEA'
         }
       },
       fontFamily: {

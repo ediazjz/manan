@@ -8,7 +8,7 @@
 @layer base {
   body {
     @apply font-brand-body !important;
-    @apply bg-neutral-light text-base md:text-lg xl:text-xl text-inky font-normal;
+    @apply bg-neutral-lighter text-base md:text-lg xl:text-xl text-inky font-normal;
   }
 
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -58,6 +58,6 @@
     @apply border-none text-inky-lighter hover:text-inky;
   }
   .btn-social {
-    @apply flex justify-center mx-auto mt-0 mb-4 px-5 md:px-6 xl:px-7 py-2 rounded-lg text-center font-bold disabled:opacity-50 transition-all !important;
+    @apply w-full flex justify-center mx-0 mt-0 mb-4 px-5 md:px-6 xl:px-7 py-2 rounded-lg text-center font-bold disabled:opacity-50 transition-all !important;
   }
 }
