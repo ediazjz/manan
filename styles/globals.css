@@ -40,7 +40,7 @@
 
 @layer components {
   .btn {
-    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded text-center font-bold disabled:opacity-50 transition-all cursor-pointer;
+    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all cursor-pointer;
   }
   .btn-primary {
     @apply border-accent hover:border-accent-dark bg-accent hover:bg-accent-dark text-white;
@@ -56,5 +56,8 @@
   }
   .btn-ghost {
     @apply border-none text-inky-lighter hover:text-inky;
+  }
+  .btn-social {
+    @apply flex justify-center mx-auto mt-0 mb-4 px-5 md:px-6 xl:px-7 py-2 rounded-lg text-center font-bold disabled:opacity-50 transition-all !important;
   }
 }

@@ -13,9 +13,9 @@ export default function Home() {
       <main className="container">
         <Logo className="text-red-500" />
 
-        <SocialLogIn network="google" />
-        <SocialLogIn network="facebook" />
-        <SocialLogIn network="twitter" />
+        <SocialLogIn network="google" className="btn-social" />
+        <SocialLogIn network="facebook" className="btn-social" />
+        <SocialLogIn network="twitter" className="btn-social" />
       </main>
     </>
   )
