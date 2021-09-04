@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dicebear/avatars": "^4.8.6",
+    "@dicebear/avatars-avataaars-sprites": "^4.8.6",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@heroicons/react": "^1.0.4",
+    "emailjs-com": "^3.2.0",
     "firebase": "^8.9.1",
+    "howler": "^2.2.3",
+    "luxon": "^2.0.2",
     "next": "11.1.0",
     "next-pwa": "^5.2.24",
     "react": "17.0.2",
