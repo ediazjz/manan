@@ -4,15 +4,20 @@ import debounce from 'lodash.debounce'
 
 import { UserContext } from "../lib/context"
 import { firestore } from '../lib/firebase'
+import { useUserAvatar } from "../lib/hooks"
 
 export const UsernameSelection = () => {
   const { user, username } = useContext(UserContext)
   const [userInput, setUserInput] = useState('')
   const [isValid, setIsValid] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [avatar, setAvatar] = useState('')
 
   useEffect(() => {
     checkUsername(userInput)
+
+    const avatarSVG = useUserAvatar(userInput)
+    setAvatar(avatarSVG)
   }, [userInput])
 
   // useCallback is for keeping an instance of the function between re-renderings
@@ -32,7 +37,7 @@ export const UsernameSelection = () => {
   const onChange = (e) => {
     // Force format to user input
     const val = e.target.value.toLowerCase()
-    const regex = /^(?=[a-zA-Z0-9._]{3,15}$)(?!.*[_.]{2})[^_.].*[^_.]$/
+    const regex = /^(?=[a-zA-Z0-9._]{3,15}$)/
 
     if (val.length < 3) {
       setUserInput(val)
@@ -63,19 +68,21 @@ export const UsernameSelection = () => {
   }
   
   return (
-    <main>
-      <div className="flex">
+    <main className="container h-screen flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center mb-12">
+        <img className="w-32 mb-2" src={avatar} alt={userInput} />
         <span className="smoll">You can change this avatar later if you want</span>
       </div>
 
 
-      <form onSubmit={onSubmit}>
-        <h1 className="h3">Choose an username</h1>
+      <form onSubmit={onSubmit} className="flex flex-col items-center w-full">
+        <h1 className="h3 mb-6 text-center">Choose an username</h1>
 
         <input
+          className="w-full mb-2 text-center"
           name="username"
           type="text"
-          placeholder="classy_username"
+          placeholder="cool.username"
           value={userInput}
           onChange={onChange}
         />
@@ -83,13 +90,13 @@ export const UsernameSelection = () => {
         {isLoading
           ? <span className="d-block text-inky-lighter">Validating user...</span>
           : isValid
-            ? <span className="d-block text-fdbk-success">This username is available!</span>
+            ? <span className="d-block text-fdbk-success">{userInput} is available!</span>
             : (userInput && !isValid)
-              ? <span className="d-block text-fdbk-error">This username is already taken!</span>
-              : <span className="hidden"></span>
+              ? <span className="d-block text-fdbk-error">This username is invalid or already taken</span>
+              : <span className="hiden"></span>
         }
 
-        <button type="submit" className="btn btn-primary" disabled={!isValid}>
+        <button type="submit" className="btn btn-primary mt-4" disabled={!isValid}>
           I want this one
         </button>
       </form>
