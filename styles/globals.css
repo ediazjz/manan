@@ -8,7 +8,7 @@
 @layer base {
   body {
     @apply font-brand-body !important;
-    @apply bg-neutral-lighter text-base md:text-lg xl:text-xl text-inky font-normal;
+    @apply bg-neutral-light text-base md:text-lg xl:text-xl text-inky font-normal;
   }
 
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

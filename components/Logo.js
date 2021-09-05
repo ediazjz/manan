@@ -6,7 +6,6 @@ export const Logo = ({ type, width, className }) => {
     ? <svg
       xmlns="http://www.w3.org/2000/svg"
       width={ width }
-      height="auto"
       className={ className }
       fill="none"
       viewBox="0 0 128 111"
@@ -23,7 +22,6 @@ export const Logo = ({ type, width, className }) => {
     : <svg
       xmlns="http://www.w3.org/2000/svg"
       width={ width }
-      height="auto"
       className={ className }
       fill="none"
       viewBox="0 0 256 39"
