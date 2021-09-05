@@ -2,8 +2,8 @@ import Head from 'next/head'
 import { useContext } from 'react'
 
 import { UserContext } from '../lib/context'
-
-import { Logo, SocialLogIn } from '../components'
+import { auth } from '../lib/firebase'
+import { Logo, SocialLogIn, UsernameSelection } from '../components'
 
 export default function Home() {
   const { user, username } = useContext(UserContext)
@@ -15,22 +15,20 @@ export default function Home() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-
-      <main className="container h-screen flex flex-col items-center justify-center">
-        {user
-          ? !username
-            ? <UsernameSelection />
-            : <Meditate />
-          : <SignInButtons />
-        }
-      </main>
+      
+      {user
+        ? !username
+          ? <UsernameSelection />
+          : <Meditate />
+        : <SignInButtons />
+      }
     </>
   )
 }
 
 const SignInButtons = () => {
   return (
-    <>
+    <main className="container h-screen flex flex-col items-center justify-center">
       <Logo className="text-primary mb-8" />
       <Logo type="logotype" width="256" className="text-primary mb-12" />
 
@@ -39,18 +37,15 @@ const SignInButtons = () => {
         <SocialLogIn network="facebook" className="btn-social" />
         <SocialLogIn network="twitter" className="btn-social" />
       </div>
-    </>
-  )
-}
-
-const UsernameSelection = () => {
-  return (
-    <h1>Select your username</h1>
+    </main>
   )
 }
 
 const Meditate = () => {
   return (
-    <h1>Meditate</h1>
+    <>
+      <h1>Meditate</h1>
+      <button onClick={() => auth.signOut()}>Sign Out</button>
+    </>
   )
 }
