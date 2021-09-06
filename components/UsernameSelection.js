@@ -12,11 +12,11 @@ export const UsernameSelection = () => {
   const [isValid, setIsValid] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [avatar, setAvatar] = useState('')
+  const avatarSVG = useUserAvatar(userInput)
 
   useEffect(() => {
     checkUsername(userInput)
 
-    const avatarSVG = useUserAvatar(userInput)
     setAvatar(avatarSVG)
   }, [userInput])
 
