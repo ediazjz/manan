@@ -7,10 +7,12 @@ import { firestore } from '../lib/firebase'
 import { useUserAvatar } from "../lib/hooks"
 
 export const UsernameSelection = () => {
-  const { user, username } = useContext(UserContext)
+  const { user } = useContext(UserContext)
+
   const [userInput, setUserInput] = useState('')
   const [isValid, setIsValid] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
   const [avatar, setAvatar] = useState('')
   const avatarSVG = useUserAvatar(userInput)
 
@@ -66,7 +68,7 @@ export const UsernameSelection = () => {
 
     await batch.commit()
   }
-  
+
   return (
     <main className="container h-screen flex flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center mb-12">
