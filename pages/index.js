@@ -3,7 +3,7 @@ import { useContext } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Logo, SocialLogIn, UsernameSelection } from '../components'
+import { Input, Logo, SocialLogIn, UsernameSelection } from '../components'
 
 export default function Home() {
   const { user, username } = useContext(UserContext)
@@ -15,6 +15,13 @@ export default function Home() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+
+      <Input
+        type="text"
+        name="test"
+        placehoder="This is a test"
+        value={user}
+      />
       
       {user
         ? !username

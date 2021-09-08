@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 @layer base {
   body {
     @apply font-brand-body !important;
@@ -59,5 +66,9 @@
   }
   .btn-social {
     @apply w-full flex justify-center mx-0 mt-0 mb-4 px-5 md:px-6 xl:px-7 py-2 rounded-lg text-center font-bold disabled:opacity-50 transition-all !important;
+  }
+
+  input.read-only {
+    @apply border-transparent !important;
   }
 }
