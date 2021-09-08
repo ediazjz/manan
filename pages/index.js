@@ -3,7 +3,9 @@ import { useContext } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Input, Logo, SocialLogIn, UsernameSelection } from '../components'
+import { Button, Input, Logo, SocialLogIn, UsernameSelection } from '../components'
+
+import { BeakerIcon } from '@heroicons/react/solid'
 
 export default function Home() {
   const { user, username } = useContext(UserContext)
@@ -21,6 +23,12 @@ export default function Home() {
         name="test"
         placehoder="This is a test"
         value={user}
+      />
+      <Button
+        className="btn-primary"
+        href="/settings"
+        text="This is a test!"
+        icon={<BeakerIcon className="btn-icon" />}
       />
       
       {user

@@ -47,25 +47,28 @@ button:focus {
 
 @layer components {
   .btn {
-    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all cursor-pointer;
+    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-primary {
-    @apply border-accent hover:border-accent-dark bg-accent hover:bg-accent-dark text-white;
+    @apply border-accent hover:border-accent-dark disabled:hover:border-accent bg-accent hover:bg-accent-dark disabled:hover:bg-accent text-white;
   }
   .btn-primary-outlined {
-    @apply border-accent hover:border-accent-dark bg-transparent text-accent hover:text-accent-dark;
+    @apply border-accent hover:border-accent-dark disabled:hover:border-accent bg-transparent text-accent hover:text-accent-dark disabled:hover:text-accent;
   }
   .btn-secondary {
-    @apply border-secondary-light hover:border-secondary bg-secondary-light hover:bg-secondary text-white;
+    @apply border-secondary-light hover:border-secondary disabled:hover:border-secondary-light bg-secondary-light hover:bg-secondary disabled:hover:bg-secondary-light text-white;
   }
   .btn-secondary-outlined {
-    @apply border-secondary-light hover:border-secondary bg-transparent text-secondary-light hover:text-secondary;
+    @apply border-secondary-light hover:border-secondary disabled:hover:border-secondary-light bg-transparent text-secondary-light hover:text-secondary disabled:hover:text-secondary-light;
   }
   .btn-ghost {
-    @apply border-none text-inky-lighter hover:text-inky;
+    @apply border-none text-inky-lighter hover:text-inky disabled:hover:text-inky-lighter;
   }
   .btn-social {
     @apply w-full flex justify-center mx-0 mt-0 mb-4 px-5 md:px-6 xl:px-7 py-2 rounded-lg text-center font-bold disabled:opacity-50 transition-all !important;
+  }
+  .btn-icon {
+    @apply h-5 md:h-6 xl:h-7 w-5 md:w-6 xl:w-7;
   }
 
   input.read-only {
