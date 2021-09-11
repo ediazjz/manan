@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import { NavBar } from './'
 
 export const Layout = (props) => {
@@ -7,4 +9,8 @@ export const Layout = (props) => {
       { props.children }
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.element
 }

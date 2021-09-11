@@ -1,4 +1,4 @@
-export { Layout } from './layout'
+export { Layout } from './Layout'
 
 // Individual omponents
 export { Logo } from './Logo'
