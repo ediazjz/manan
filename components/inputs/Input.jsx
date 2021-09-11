@@ -9,8 +9,10 @@ export const Input = ({ className, type, name, placehoder, value, onChange, disa
         focus:ring focus:ring-secondary-lighter
         placeholder-inky-lighter
         bg-neutral-lighter
+        transition-all duration-300
         disabled:opacity-50 disabled:cursor-not-allowed
-        ${className}`}
+        ${className}
+      `}
       type={type}
       name={name}
       placeholder={placehoder}

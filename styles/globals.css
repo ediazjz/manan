@@ -47,7 +47,7 @@ button:focus {
 
 @layer components {
   .btn {
-    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all cursor-pointer disabled:cursor-not-allowed;
+    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-primary {
     @apply border-accent hover:border-accent-dark disabled:hover:border-accent bg-accent hover:bg-accent-dark disabled:hover:bg-accent text-white;
