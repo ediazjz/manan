@@ -1,14 +1,48 @@
 import Head from 'next/head'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Button, Input, Logo, SocialLogIn, UsernameSelection } from '../components'
+import { Button, Input, Logo, Select, SocialLogIn, UsernameSelection } from '../components'
 
 import { BeakerIcon } from '@heroicons/react/solid'
 
 export default function Home() {
+  const dishes = [
+    {
+      value: "icecream",
+      label: "Helado"
+    },
+    {
+      value: "cake",
+      label: "Pastel"
+    },
+    {
+      value: "brownie",
+      label: "Brownie"
+    }
+  ]
+
   const { user, username } = useContext(UserContext)
+  const [client, setClient] = useState({
+    nombre: '',
+    estadoCivil: '',
+  })
+
+  const handleChange = e => {
+    const {name, value} = e.target;
+    setClient({
+      ...client,
+      [name] : value
+    });
+  };
+  
+  const handleDropdown = (value) => {
+    setClient({
+      ...client,
+      estadoCivil: value
+    })
+  }
 
   return (
     <>
@@ -18,11 +52,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
+      <Select className="w-1/2" options={dishes} onChange={handleDropdown} />
       <Input
         type="text"
-        name="test"
+        name="nombre"
         placehoder="This is a test"
-        value={user}
+        value={client.nombre}
+        onChange={handleChange}
       />
       <Button
         className="btn-primary"
