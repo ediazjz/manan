@@ -46,6 +46,7 @@ button:focus {
 }
 
 @layer components {
+  /* Buttons */
   .btn {
     @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
   }
@@ -71,7 +72,27 @@ button:focus {
     @apply h-5 md:h-6 xl:h-7 w-5 md:w-6 xl:w-7;
   }
 
+  /* Inputs */
   input.read-only {
     @apply border-transparent !important;
+  }
+  .radio input:checked ~ span, .checkbox input:checked ~ span {
+    @apply bg-primary !important;
+  }
+  .radio span::after, .checkbox span::after {
+    @apply absolute block invisible transition duration-300;
+    content: "";
+  }
+  .radio input:checked ~ span::after, .checkbox input:checked ~ span::after {
+    @apply visible;
+  }
+
+  /* Input Radio */
+  .radio span::after {
+    @apply top-1 md:top-1.5 xl:top-2 left-1 md:left-1.5 xl:left-2 h-3 w-3 bg-white rounded-full;
+  }
+  /* Input Checkbox */
+  .checkbox span::after {
+    @apply top-1 md:top-1.5 xl:top-2 left-0.5 md:left-1 xl:left-1.5 h-2 w-4 border-b-2 border-l-2 border-white transform -rotate-45;
   }
 }

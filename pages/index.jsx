@@ -3,7 +3,7 @@ import { useContext, useState } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Button, Input, Logo, Select, SocialLogIn, UsernameSelection } from '../components'
+import { Button, Input, InputButton, Logo, Select, SocialLogIn, UsernameSelection } from '../components'
 
 import { BeakerIcon } from '@heroicons/react/solid'
 
@@ -60,6 +60,22 @@ export default function Home() {
         value={client.nombre}
         onChange={handleChange}
       />
+      
+      <div className="flex w-1/2">
+        <InputButton
+          label="This is a test"
+          type="radio"
+          name="choice"
+          value="test"
+        />
+        <InputButton
+          label="This is not a test"
+          type="radio"
+          name="choice"
+          value="not a test"
+        />
+      </div>
+
       <Button
         className="btn-primary"
         href="/settings"
