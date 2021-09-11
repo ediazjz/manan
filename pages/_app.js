@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { ThemeProvider } from 'next-themes'
 
 import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
@@ -10,9 +11,11 @@ function MyApp({ Component, pageProps }) {
   const userData = useUserData()
 
   return (
-    <UserContext.Provider value={userData}>
-      <Component {...pageProps} />
-    </UserContext.Provider>
+    <ThemeProvider attribute="class">
+      <UserContext.Provider value={userData}>
+        <Component {...pageProps} />
+      </UserContext.Provider>
+    </ThemeProvider>
   )
 }
 
