@@ -55,7 +55,14 @@ export default function Home() {
 
       <ThemeSwitch ></ThemeSwitch>
 
-      <Select className="w-1/2" options={dishes} onChange={handleDropdown} />
+      <Select
+        classContainer="w-1/2"
+        label="Select something"
+        id="dishes"
+        options={dishes}
+        onChange={handleDropdown}
+      />
+      
       <Input
         classContainer="w-1/2"
         id="nombre"
