@@ -3,7 +3,7 @@ import { useContext, useState } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Button, Input, InputButton, Logo, Select, SocialLogIn, UsernameSelection } from '../components'
+import { Button, Input, InputButton, Logo, Select, SocialLogIn, ThemeSwitch, UsernameSelection } from '../components'
 
 import { BeakerIcon } from '@heroicons/react/solid'
 
@@ -51,6 +51,8 @@ export default function Home() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+
+      <ThemeSwitch ></ThemeSwitch>
 
       <Select className="w-1/2" options={dishes} onChange={handleDropdown} />
       <Input
