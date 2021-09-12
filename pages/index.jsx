@@ -68,6 +68,9 @@ export default function Home() {
       />
 
       <Textarea
+        classContainer="w-1/2"
+        id="historia"
+        label="Write something"
         name="historia"
         placehoder="This is a test"
         value={client.historia}
