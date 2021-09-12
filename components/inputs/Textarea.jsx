@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-export const Input = ({ className, type, name, placehoder, value, onChange, disabled }) => {
+export const Textarea = ({ className, name, placehoder, value, onChange, disabled }) => {
   return (
-    <input
+    <textarea
       className={`
         py-2 md:py-3 px-3 md:px-6
         border border-inky-lighter focus:border-secondary rounded
@@ -13,7 +13,8 @@ export const Input = ({ className, type, name, placehoder, value, onChange, disa
         disabled:opacity-50 disabled:cursor-not-allowed
         ${className}
       `}
-      type={type}
+      rows="12"
+      cols="56"
       name={name}
       placeholder={placehoder}
       value={value}
@@ -23,12 +24,11 @@ export const Input = ({ className, type, name, placehoder, value, onChange, disa
   )
 }
 
-Input.propTypes = {
+Textarea.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placehoder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   disabled: PropTypes.bool
-}
+} 

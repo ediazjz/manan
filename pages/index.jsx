@@ -3,7 +3,7 @@ import { useContext, useState } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Button, Input, InputButton, Logo, Select, SocialLogIn, ThemeSwitch, UsernameSelection } from '../components'
+import { Button, Input, InputButton, Logo, Select, SocialLogIn, Textarea, ThemeSwitch, UsernameSelection } from '../components'
 
 import { BeakerIcon } from '@heroicons/react/solid'
 
@@ -27,6 +27,7 @@ export default function Home() {
   const [client, setClient] = useState({
     nombre: '',
     estadoCivil: '',
+    historia: ''
   })
 
   const handleChange = e => {
@@ -60,6 +61,13 @@ export default function Home() {
         name="nombre"
         placehoder="This is a test"
         value={client.nombre}
+        onChange={handleChange}
+      />
+
+      <Textarea
+        name="historia"
+        placehoder="This is a test"
+        value={client.historia}
         onChange={handleChange}
       />
       
