@@ -42,6 +42,16 @@ const GeneralButton = ({ className, text, icon, type, onClick, disabled}) => {
   )
 }
 
+Button.propTypes = {
+  className: PropTypes.string,
+  text: PropTypes.string,
+  icon: PropTypes.element,
+  href: PropTypes.node,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool
+}
+
 LinkButton.propTypes = {
   className: PropTypes.string,
   text: PropTypes.string,
