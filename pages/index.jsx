@@ -57,6 +57,9 @@ export default function Home() {
 
       <Select className="w-1/2" options={dishes} onChange={handleDropdown} />
       <Input
+        classContainer="w-1/2"
+        id="nombre"
+        label="Write something"
         type="text"
         name="nombre"
         placehoder="This is a test"
