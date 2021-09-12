@@ -95,4 +95,35 @@ button:focus {
   .checkbox span::after {
     @apply top-1 md:top-1.5 xl:top-2 left-0.5 md:left-1 xl:left-1.5 h-2 w-4 border-b-2 border-l-2 border-white transform -rotate-45;
   }
+
+  /* NavBar */
+  .navbar-icon svg {
+    @apply h-8 md:h-12 w-8 md:w-12;
+  }
+  .navbar-icon.active svg {
+    @apply h-10 md:h-16 xl:h-12 w-10 md:w-16 xl:w-12;
+  }
+  .navbar-item:nth-of-type(1) {
+    @apply xl:order-5;
+  }
+  .navbar-item:nth-of-type(2) {
+    @apply xl:order-2;
+  }
+  .navbar-item:nth-of-type(3) {
+    @apply xl:order-1;
+  }
+  .navbar-item:nth-of-type(4) {
+    @apply xl:order-3;
+  }
+  .navbar-item:nth-of-type(5) {
+    @apply xl:order-4;
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .shadow-x-xl {
+      box-shadow: 20px 0px 25px rgba(0, 0, 0, 0.1), 10px 0px 10px rgba(0, 0, 0, 0.04);
+    }
+  }
 }

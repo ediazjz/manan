@@ -4,10 +4,13 @@ import { NavBar } from './'
 
 export const Layout = (props) => {
   return (
-    <>
+    <div className="xl:flex h-screen w-full">
       <NavBar />
-      { props.children }
-    </>
+
+      <div className="container">
+        { props.children }
+      </div>
+    </div>
   )
 }
 
