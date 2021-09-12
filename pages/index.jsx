@@ -3,7 +3,7 @@ import { useContext, useState } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Button, Input, InputButton, Logo, Select, SocialLogIn, Textarea, ThemeSwitch, UsernameSelection } from '../components'
+import { Button, GroupRadio, Input, InputButton, Logo, Select, SocialLogIn, Textarea, ThemeSwitch, UsernameSelection } from '../components'
 
 import { BeakerIcon } from '@heroicons/react/solid'
 
@@ -23,11 +23,31 @@ export default function Home() {
     }
   ]
 
+  const frameworks = [
+    {
+      label: "Next",
+      value: "next"
+    },
+    {
+      label: "Vue",
+      value: "vue"
+    },
+    {
+      label: "Angular",
+      value: "angular"
+    },
+    {
+      label: "Svelte",
+      value: "svelte"
+    },
+  ]
+
   const { user, username } = useContext(UserContext)
   const [client, setClient] = useState({
     nombre: '',
     estadoCivil: '',
-    historia: ''
+    historia: '',
+    framework: ''
   })
 
   const handleChange = e => {
@@ -62,7 +82,7 @@ export default function Home() {
         options={dishes}
         onChange={handleDropdown}
       />
-      
+
       <Input
         classContainer="w-1/2"
         id="nombre"
@@ -84,20 +104,14 @@ export default function Home() {
         onChange={handleChange}
       />
       
-      <div className="flex w-1/2">
-        <InputButton
-          label="This is a test"
-          type="radio"
-          name="choice"
-          value="test"
-        />
-        <InputButton
-          label="This is not a test"
-          type="radio"
-          name="choice"
-          value="not a test"
-        />
-      </div>
+      <GroupRadio
+        classContainer="w-1/2"
+        className="w-1/2"
+        label="Pick one"
+        name="framework"
+        options={frameworks}
+        onChange={handleChange}
+      />
 
       <Button
         className="btn-primary"

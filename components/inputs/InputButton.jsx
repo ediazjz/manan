@@ -6,7 +6,7 @@ export const InputButton = ({ className, label, type, name, value}) => {
       className={`
         ${(type == "radio") ? "radio" : "checkbox"}
         relative
-        flex flex-1 items-center
+        flex items-center
         h-6 md:h-7 xl:h-8
         group
         cursor-pointer
@@ -40,8 +40,8 @@ export const InputButton = ({ className, label, type, name, value}) => {
 
 InputButton.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.string,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
 }
