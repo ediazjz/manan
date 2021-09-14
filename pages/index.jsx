@@ -3,7 +3,8 @@ import { useContext, useState } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Button, GroupRadio, Input, InputButton, Logo, Select, SocialLogIn, Textarea, ThemeSwitch, UsernameSelection } from '../components'
+import { Button, GroupCheckbox, GroupRadio, Input, Logo, Select, SocialLogIn, Textarea, ThemeSwitch, UsernameSelection } from '../components'
+import { useCheckboxes } from '../lib/hooks'
 
 import { BeakerIcon } from '@heroicons/react/solid'
 
@@ -42,6 +43,29 @@ export default function Home() {
     },
   ]
 
+  const languages = [
+    {
+      label: "Python",
+      value: "python"
+    },
+    {
+      label: "Ruby",
+      value: "ruby"
+    },
+    {
+      label: "Java",
+      value: "java"
+    },
+    {
+      label: "Node",
+      value: "node"
+    },
+    {
+      label: "C",
+      value: "c"
+    },
+  ]
+
   const { user, username } = useContext(UserContext)
   const [client, setClient] = useState({
     nombre: '',
@@ -49,6 +73,9 @@ export default function Home() {
     historia: '',
     framework: ''
   })
+
+  console.log(typeof useCheckboxes)
+  const [checboxes, setCheckboxes] = useCheckboxes(languages)
 
   const handleChange = e => {
     const {name, value} = e.target;
@@ -111,6 +138,15 @@ export default function Home() {
         name="framework"
         options={frameworks}
         onChange={handleChange}
+      />
+
+      <GroupCheckbox
+        classContainer="w-1/2"
+        className="w-1/3"
+        label="Pick one"
+        name="language"
+        options={checboxes}
+        onChange={setCheckboxes}
       />
 
       <Button

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export const InputButton = ({ className, label, type, name, value}) => {
+export const InputButton = ({ className, label, type, name, value, checked, onChange}) => {
   return (
     <label
       className={`
@@ -22,6 +22,8 @@ export const InputButton = ({ className, label, type, name, value}) => {
         type={type}
         name={name}
         value={value}
+        checked={checked}
+        onChange={onChange}
       />
 
       <span
@@ -43,5 +45,7 @@ InputButton.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  checked: PropTypes.bool,
+  onChange: PropTypes.func
 }
