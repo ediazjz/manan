@@ -7,7 +7,7 @@ export const Layout = (props) => {
     <div className="xl:flex h-screen w-full">
       <NavBar />
 
-      <div className="container">
+      <div className="container pb-28 md:pb-40 xl:pb-10 2xl:pb-12 xl:overflow-y-auto">
         { props.children }
       </div>
     </div>
