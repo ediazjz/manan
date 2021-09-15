@@ -74,7 +74,6 @@ export default function Home() {
     framework: ''
   })
 
-  console.log(typeof useCheckboxes)
   const [checboxes, setCheckboxes] = useCheckboxes(languages)
 
   const handleChange = e => {
