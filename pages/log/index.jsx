@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Layout, SocialSharing } from '../../components'
+import { Layout, SocialSharing, WeeklyProgress } from '../../components'
 
 const Log = () => {
   return (
@@ -13,6 +13,7 @@ const Log = () => {
       <h1>This will be the Log Page</h1>
 
       <SocialSharing />
+      <WeeklyProgress />
     </Layout>
   )
 }
