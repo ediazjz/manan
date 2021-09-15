@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { HeartIcon, MusicNoteIcon } from '@heroicons/react/solid'
@@ -6,9 +7,15 @@ import { Button } from ".."
 import { getUserAvatar } from "../../lib/avataaars"
 
 export const SocialCard = () => {
-  const avatar = getUserAvatar("ediazjz")
+  const [mounted, setMounted] = useState(false)
+  const [avatar, setAvatar] = useState('')
 
-  return (
+  useEffect(() => {
+    setMounted(true)
+    setAvatar(getUserAvatar("ediazjz"))
+  }, [])
+
+  return mounted && (
     <div className="max-w-lg py-4 px-4 rounded-xl bg-neutral-lighter shadow hover:shadow-lg transition-all duration-300">
       <div className="flex justify-between items-center mb-4">
         <div className="flex space-x-4 items-center">
