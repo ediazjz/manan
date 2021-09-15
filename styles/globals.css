@@ -121,6 +121,26 @@ button:focus {
   .navbar-item:nth-of-type(5) {
     @apply xl:order-4;
   }
+
+  /* Sound Indicator */
+  .soundNone {
+    @apply border-inky text-inky opacity-50;
+  }
+  .soundForest {
+    @apply border-[#059669] text-[#059669];
+  }
+  .soundSea {
+    @apply border-[#0284C7] text-[#0284C7];
+  }
+  .soundFireplace {
+    @apply border-[#FB7185] text-[#FB7185];
+  }
+  .soundRain {
+    @apply border-[#64748B] text-[#64748B];
+  }
+  .soundWhiteNoise {
+    @apply border-[#A1A1AA] text-[#A1A1AA];
+  }
 }
 
 @layer utilities {
