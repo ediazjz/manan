@@ -4,7 +4,7 @@ import debounce from 'lodash.debounce'
 
 import { UserContext } from "../lib/context"
 import { firestore } from '../lib/firebase'
-import { useUserAvatar } from "../lib/hooks"
+import { getUserAvatar } from "../lib/avataaars"
 
 export const UsernameSelection = () => {
   const { user } = useContext(UserContext)
@@ -14,7 +14,7 @@ export const UsernameSelection = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const [avatar, setAvatar] = useState('')
-  const avatarSVG = useUserAvatar(userInput)
+  const avatarSVG = getUserAvatar(userInput)
 
   useEffect(() => {
     checkUsername(userInput)

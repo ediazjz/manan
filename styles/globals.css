@@ -48,7 +48,7 @@ button:focus {
 @layer components {
   /* Buttons */
   .btn {
-    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
+    @apply flex justify-center items-center space-x-2 xl:space-x-3 px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-primary {
     @apply border-accent hover:border-accent-dark disabled:hover:border-accent bg-accent hover:bg-accent-dark disabled:hover:bg-accent text-white;
@@ -70,6 +70,9 @@ button:focus {
   }
   .btn-icon {
     @apply h-5 md:h-6 xl:h-7 w-5 md:w-6 xl:w-7;
+  }
+  .btn-faIcon {
+    @apply text-xl md:text-2xl xl:text-3xl;
   }
 
   /* Inputs */
@@ -94,5 +97,56 @@ button:focus {
   /* Input Checkbox */
   .checkbox span::after {
     @apply top-1 md:top-1.5 xl:top-2 left-0.5 md:left-1 xl:left-1.5 h-2 w-4 border-b-2 border-l-2 border-white transform -rotate-45;
+  }
+
+  /* NavBar */
+  .navbar-icon svg {
+    @apply h-8 md:h-12 w-8 md:w-12;
+  }
+  .navbar-icon.active svg {
+    @apply h-10 md:h-16 xl:h-12 w-10 md:w-16 xl:w-12;
+  }
+  .navbar-item:nth-of-type(1) {
+    @apply xl:order-5;
+  }
+  .navbar-item:nth-of-type(2) {
+    @apply xl:order-2;
+  }
+  .navbar-item:nth-of-type(3) {
+    @apply xl:order-1;
+  }
+  .navbar-item:nth-of-type(4) {
+    @apply xl:order-3;
+  }
+  .navbar-item:nth-of-type(5) {
+    @apply xl:order-4;
+  }
+
+  /* Sound Indicator */
+  .soundNone {
+    @apply border-inky text-inky opacity-50;
+  }
+  .soundForest {
+    @apply border-[#059669] text-[#059669];
+  }
+  .soundSea {
+    @apply border-[#0284C7] text-[#0284C7];
+  }
+  .soundFireplace {
+    @apply border-[#FB7185] text-[#FB7185];
+  }
+  .soundRain {
+    @apply border-[#64748B] text-[#64748B];
+  }
+  .soundWhiteNoise {
+    @apply border-[#A1A1AA] text-[#A1A1AA];
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .shadow-x-xl {
+      box-shadow: 20px 0px 25px rgba(0, 0, 0, 0.1), 10px 0px 10px rgba(0, 0, 0, 0.04);
+    }
   }
 }

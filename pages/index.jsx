@@ -3,7 +3,8 @@ import { useContext, useState } from 'react'
 
 import { UserContext } from '../lib/context'
 import { auth } from '../lib/firebase'
-import { Button, Input, InputButton, Logo, Select, SocialLogIn, Textarea, ThemeSwitch, UsernameSelection } from '../components'
+import { Button, GroupCheckbox, GroupRadio, Input, Logo, Select, SocialLogIn, Textarea, ThemeSwitch, UsernameSelection } from '../components'
+import { useCheckboxes } from '../lib/hooks'
 
 import { BeakerIcon } from '@heroicons/react/solid'
 
@@ -23,12 +24,57 @@ export default function Home() {
     }
   ]
 
+  const frameworks = [
+    {
+      label: "Next",
+      value: "next"
+    },
+    {
+      label: "Vue",
+      value: "vue"
+    },
+    {
+      label: "Angular",
+      value: "angular"
+    },
+    {
+      label: "Svelte",
+      value: "svelte"
+    },
+  ]
+
+  const languages = [
+    {
+      label: "Python",
+      value: "python"
+    },
+    {
+      label: "Ruby",
+      value: "ruby"
+    },
+    {
+      label: "Java",
+      value: "java"
+    },
+    {
+      label: "Node",
+      value: "node"
+    },
+    {
+      label: "C",
+      value: "c"
+    },
+  ]
+
   const { user, username } = useContext(UserContext)
   const [client, setClient] = useState({
     nombre: '',
     estadoCivil: '',
-    historia: ''
+    historia: '',
+    framework: ''
   })
+
+  const [checboxes, setCheckboxes] = useCheckboxes(languages)
 
   const handleChange = e => {
     const {name, value} = e.target;
@@ -55,8 +101,18 @@ export default function Home() {
 
       <ThemeSwitch ></ThemeSwitch>
 
-      <Select className="w-1/2" options={dishes} onChange={handleDropdown} />
+      <Select
+        classContainer="w-1/2"
+        label="Select something"
+        id="dishes"
+        options={dishes}
+        onChange={handleDropdown}
+      />
+
       <Input
+        classContainer="w-1/2"
+        id="nombre"
+        label="Write something"
         type="text"
         name="nombre"
         placehoder="This is a test"
@@ -65,26 +121,32 @@ export default function Home() {
       />
 
       <Textarea
+        classContainer="w-1/2"
+        id="historia"
+        label="Write something"
         name="historia"
         placehoder="This is a test"
         value={client.historia}
         onChange={handleChange}
       />
       
-      <div className="flex w-1/2">
-        <InputButton
-          label="This is a test"
-          type="radio"
-          name="choice"
-          value="test"
-        />
-        <InputButton
-          label="This is not a test"
-          type="radio"
-          name="choice"
-          value="not a test"
-        />
-      </div>
+      <GroupRadio
+        classContainer="w-1/2"
+        className="w-1/2"
+        label="Pick one"
+        name="framework"
+        options={frameworks}
+        onChange={handleChange}
+      />
+
+      <GroupCheckbox
+        classContainer="w-1/2"
+        className="w-1/3"
+        label="Pick one"
+        name="language"
+        options={checboxes}
+        onChange={setCheckboxes}
+      />
 
       <Button
         className="btn-primary"
