@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Layout, LogCard, SocialSharing, WeeklyProgress } from '../../components'
+import { Layout, LogCard, SocialCard, SocialSharing, WeeklyProgress } from '../../components'
 
 const Log = () => {
   return (
@@ -14,7 +14,11 @@ const Log = () => {
 
       <SocialSharing />
       <WeeklyProgress />
-      <LogCard />
+      
+      <div className="flex flex-col space-y-6">
+        <LogCard />
+        <SocialCard />
+      </div>
     </Layout>
   )
 }
