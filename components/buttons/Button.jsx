@@ -25,7 +25,7 @@ export const Button = ({ className, text, icon, href, type, onClick, disabled })
 const LinkButton = ({ className, text, icon, href }) => {
   return (
     <Link href={href}>
-      <a className={`btn flex justify-center items-center space-x-2 xl:space-x-3 ${className}`}>
+      <a className={`btn ${className}`}>
         {icon}
         {text && <span>{text}</span>}
       </a>
@@ -35,7 +35,7 @@ const LinkButton = ({ className, text, icon, href }) => {
 
 const GeneralButton = ({ className, text, icon, type, onClick, disabled}) => {
   return (
-    <button className={`btn flex justify-center items-center space-x-2 xl:space-x-3 ${className}`} type={type} onClick={onClick} disabled={disabled}>
+    <button className={`btn ${className}`} type={type} onClick={onClick} disabled={disabled}>
       {icon}
       {text && <span>{text}</span>}
     </button>

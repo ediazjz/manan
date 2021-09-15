@@ -48,7 +48,7 @@ button:focus {
 @layer components {
   /* Buttons */
   .btn {
-    @apply block mx-auto px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
+    @apply flex justify-center items-center space-x-2 xl:space-x-3 px-5 md:px-6 xl:px-7 py-2 border border-solid rounded-lg text-center font-bold disabled:opacity-50 transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-primary {
     @apply border-accent hover:border-accent-dark disabled:hover:border-accent bg-accent hover:bg-accent-dark disabled:hover:bg-accent text-white;
@@ -70,6 +70,9 @@ button:focus {
   }
   .btn-icon {
     @apply h-5 md:h-6 xl:h-7 w-5 md:w-6 xl:w-7;
+  }
+  .btn-faIcon {
+    @apply text-xl md:text-2xl xl:text-3xl;
   }
 
   /* Inputs */
