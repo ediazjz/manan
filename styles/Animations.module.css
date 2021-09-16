@@ -1,0 +1,26 @@
+.hair {
+  background: linear-gradient(354deg, #004e98, #160d04);
+  background-size: 400% 400%;
+  animation: Breathing 4s ease infinite;
+}
+
+@-webkit-keyframes Breathing {
+  0%{background-position:0% 14%}
+  50%{background-position:100% 87%}
+  100%{background-position:0% 14%}
+}
+@-moz-keyframes Breathing {
+  0%{background-position:0% 14%}
+  50%{background-position:100% 87%}
+  100%{background-position:0% 14%}
+}
+@-o-keyframes Breathing {
+  0%{background-position:0% 14%}
+  50%{background-position:100% 87%}
+  100%{background-position:0% 14%}
+}
+@keyframes Breathing {
+  0%{background-position:0% 14%}
+  50%{background-position:100% 87%}
+  100%{background-position:0% 14%}
+}

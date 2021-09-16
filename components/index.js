@@ -1,7 +1,10 @@
 export { Layout } from './Layout'
 
-// Individual omponents
+// SVG
 export { Logo } from './Logo'
+export { Illustration } from './Illustration'
+
+// Individual omponents
 export { MeditateIcon } from './MeditateIcon'
 export { UsernameSelection } from './UsernameSelection'
 export { ThemeSwitch } from './ThemeSwitch'
