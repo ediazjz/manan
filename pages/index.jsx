@@ -14,11 +14,35 @@ export default function Home() {
       { path: '#hair2' },
       { repeat: 999, duration: 3000, yoyo: true }
     ).start();
-  }, [])
 
-  const downloadApp = () => {
-    console.log("hey")
-  }
+    // PWA button logic
+    const buttonPWA = document.getElementById("buttonPWA")
+    let deferredPrompt
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Stash the event so it can be triggered later
+      deferredPrompt = e
+
+      // Show button if browser is compatible with PWA and the user hasn't installed the app yet
+      buttonPWA.classList.remove("hidden")
+
+      // Prevent the browser from showing the install PWA prompt on load
+      e.preventDefault()
+    })
+
+    buttonPWA.addEventListener('click', async () => {
+      if (deferredPrompt !== null) {
+        // Show the prompt
+        deferredPrompt.prompt()
+
+        // Wait for the user to respond to the prompt
+        const { outcome } = await deferredPrompt.userChoice
+        if (outcome === 'accepted') {
+          deferredPrompt = null
+        }
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -57,8 +81,8 @@ export default function Home() {
             />
 
             <Button
-              className="btn-secondary w-full"
-              onClick={downloadApp}
+              className="btn-secondary w-full hidden"
+              id="buttonPWA"
               text="Download App"
               icon={<DownloadIcon className="btn-icon" />}
             />
