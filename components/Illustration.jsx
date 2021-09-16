@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types'
-import { useEffect } from 'react'
 
-import styles from '../styles/Animations.module.css'
-
-export const Illustration = ({ width }) => {
+export const Illustration = ({ className }) => {
   
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
+      className={className}
       fill="none"
       viewBox="0 0 224 209"
     >
@@ -123,5 +120,5 @@ export const Illustration = ({ width }) => {
 }
 
 Illustration.propTypes = {
-  width: PropTypes.string
+  className: PropTypes.string
 }
