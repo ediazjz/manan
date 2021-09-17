@@ -8,12 +8,13 @@ import { Button, Illustration, Logo } from '../components'
 
 export default function Home() {
   useEffect(() => {
-    const tween = KUTE.fromTo(
-      '#hair1',
-      { path: '#hair1' },
-      { path: '#hair2' },
-      { repeat: 999, duration: 3000, yoyo: true }
-    ).start();
+    // SVG animations
+    // const tween = KUTE.fromTo(
+    //   '#hair1',
+    //   { path: '#hair1' },
+    //   { path: '#hair2' },
+    //   { repeat: 999, duration: 3000, yoyo: true }
+    // ).start();
 
     // PWA button logic
     const buttonPWA = document.getElementById("buttonPWA")
