@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types'
 
-export const Logo = ({ type, width, className }) => {
+export const Logo = ({ type, className }) => {
   return (
     (type === "isotype")
     ? <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={ width }
       className={ className }
       fill="none"
       viewBox="0 0 128 111"
@@ -21,7 +20,6 @@ export const Logo = ({ type, width, className }) => {
     </svg>
     : <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={ width }
       className={ className }
       fill="none"
       viewBox="0 0 256 39"
@@ -36,11 +34,9 @@ export const Logo = ({ type, width, className }) => {
 
 Logo.propTypes = {
   type: PropTypes.string,
-  width: PropTypes.string,
   className: PropTypes.string
 }
 
 Logo.defaultProps = {
-  type: "isotype",
-  width: "128",
+  type: "isotype"
 }

@@ -5,16 +5,16 @@ import { MoonIcon, SunIcon } from "@heroicons/react/solid"
 
 export const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme()
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true);
+    setIsMounted(true)
   }, [])
 
   // Check if the component is mounted first to avoid flashing
   const toggleTheme = () => {
     if (isMounted) {
-      setTheme(theme === 'light' ? 'dark' : 'light');
+      setTheme(theme === 'light' ? 'dark' : 'light')
     }
   }
 
