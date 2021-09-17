@@ -14,7 +14,7 @@ export default function Home() {
     //   { path: '#hair1' },
     //   { path: '#hair2' },
     //   { repeat: 999, duration: 3000, yoyo: true }
-    // ).start();
+    // ).start()
 
     // PWA button logic
     const buttonPWA = document.getElementById("buttonPWA")
