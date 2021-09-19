@@ -6,6 +6,7 @@ export { Illustration } from './Illustration'
 export * from './CustomIcons'
 
 // Individual omponents
+export { LoadingScreen } from './LoadingScreen'
 export { UsernameSelection } from './UsernameSelection'
 export { ThemeSwitch } from './ThemeSwitch'
 export { SocialSharing } from './SocialSharing'
