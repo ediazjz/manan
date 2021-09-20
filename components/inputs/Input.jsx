@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export const Input = ({ classContainer, label, className, id, type, name, placeholder, value, onChange, disabled }) => {
   return (
-    <div className={`flex flex-col mb-4 xl:mb-6 ${classContainer}`}>
+    <div className={`flex flex-col ${classContainer}`}>
       {label &&
         <label htmlFor={id}>
           {label}
