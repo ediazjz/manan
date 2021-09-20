@@ -7,7 +7,7 @@ export * from './CustomIcons'
 
 // Individual omponents
 export { LoadingScreen } from './LoadingScreen'
-export { UsernameSelection } from './UsernameSelection'
+export { UserAuth } from './UserAuth'
 export { ThemeSwitch } from './ThemeSwitch'
 export { SocialSharing } from './SocialSharing'
 export { WeeklyProgress } from './WeeklyProgress'
