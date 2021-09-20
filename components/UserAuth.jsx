@@ -17,6 +17,25 @@ export const UserAuth = () => {
   )
 }
 
+const UserLogin = () => {
+  return (
+    <>
+      <Logo className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-8 text-primary" />
+      <Logo type="logotype" className="w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12 text-primary" />
+
+      <h1 className="h4 w-full md:w-3/4 lg: xl:w-1/3 mb-4 text-center">
+        Log in with a social media account
+      </h1>
+      
+      <div className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 pb-12 lg:pb-0">
+        <SocialLogIn network="google" className="btn-social" />
+        <SocialLogIn network="facebook" className="btn-social" />
+        <SocialLogIn network="twitter" className="btn-social" />
+      </div>
+    </>
+  )
+}
+
 const UsernameSelection = () => {
   const { user } = useContext(UserContext)
   
@@ -96,7 +115,7 @@ const UsernameSelection = () => {
       </div>
 
 
-      <form onSubmit={onSubmit} className="flex flex-col items-center w-full md:w-3/4 lg:w-1/2 xl:w-1/3 text-center">
+      <form onSubmit={onSubmit} className="flex flex-col items-center w-full md:w-3/4 lg:w-1/2 xl:w-1/3 pb-12 lg:pb-0 text-center">
         {title !== "Choose an username" &&
           <p className="smoll text-fdbk-error">
             If the error persits, please wait a few minutes before trying again
@@ -127,25 +146,6 @@ const UsernameSelection = () => {
           I want this one
         </button>
       </form>
-    </>
-  )
-}
-
-const UserLogin = () => {
-  return (
-    <>
-      <Logo className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-8 text-primary" />
-      <Logo type="logotype" className="w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12 text-primary" />
-
-      <h1 className="h4 w-full md:w-3/4 lg: xl:w-1/3 mb-4 text-center">
-        Log in with a social media account
-      </h1>
-      
-      <div className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 pb-12">
-        <SocialLogIn network="google" className="btn-social" />
-        <SocialLogIn network="facebook" className="btn-social" />
-        <SocialLogIn network="twitter" className="btn-social" />
-      </div>
     </>
   )
 }
