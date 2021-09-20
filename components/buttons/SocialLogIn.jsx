@@ -5,8 +5,13 @@ import PropTypes from 'prop-types'
 export const SocialLogIn = ({ network, className }) => {
   let provider
 
-  const signInWithProvider = async () => {
-    await auth.signInWithPopup(provider)
+  const signInWithProvider = async() => {
+    try {
+      await auth.signInWithPopup(provider)
+    }
+    catch(error) {
+      console.log(error)
+    }
   }
 
   switch (network) {
