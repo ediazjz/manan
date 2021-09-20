@@ -38,19 +38,15 @@ const UserLogin = () => {
 
 const UsernameSelection = () => {
   const { user } = useContext(UserContext)
-  
   const [avatar, setAvatar] = useState('')
-
   const [userInput, setUserInput] = useState('')
   const [isValid, setIsValid] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-
   const [title, setTitle] = useState("Choose an username")
 
   useEffect(() => {
-    checkUsername(userInput)
-
     setAvatar(getUserAvatar(userInput))
+    checkUsername(userInput)
   }, [userInput])
 
   // useCallback is for keeping an instance of the function between re-renderings
@@ -77,7 +73,6 @@ const UsernameSelection = () => {
       setIsLoading(false)
       setIsValid(false)
     }
-
     if (regex.test(val)) {
       setUserInput(val)
       setIsLoading(true)
@@ -97,14 +92,7 @@ const UsernameSelection = () => {
     batch.set(userDoc, { username: userInput, avatarSeed: userInput, name: user.displayName })
     batch.set(usernameDoc, { uid: user.uid })
 
-    try {
-      await batch.commit()
-    }
-    catch(error) {
-      console.log(error)
-
-      setTitle("Something went wrong, please try again")
-    }
+    await batch.commit().catch(() => setTitle("Something went wrong, please try again"))
   }
 
   return (
