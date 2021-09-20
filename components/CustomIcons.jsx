@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 
-export const MeditateIcon = ({ className, width, type }) => {
+export const MeditateIcon = ({ className, type }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
       className={className}
       fill="currentColor"
       version="1.1"
@@ -20,8 +19,33 @@ export const MeditateIcon = ({ className, width, type }) => {
   )
 }
 
+export const LoadingIcon = ({ className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={`animate-spin ${className}`}
+      fill="none"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fill="currentColor"
+        d="M10 0a10 10 0 100 20 10 10 0 000-20zm0 16.667a6.666 6.666 0 110-13.333 6.666 6.666 0 010 13.333z"
+        opacity="0.2"
+      ></path>
+      <path
+        fill="currentColor"
+        d="M3.333 10A6.667 6.667 0 0110 3.333V0A10 10 0 000 10c0 1.756.464 3.481 1.346 5l2.887-1.667a6.666 6.666 0 01-.9-3.333z"
+        opacity="0.55"
+      ></path>
+    </svg>
+  )
+}
+
 MeditateIcon.propTypes = {
   className: PropTypes.string,
-  width: PropTypes.string,
   type: PropTypes.string
+}
+
+LoadingIcon.propTypes = {
+  className: PropTypes.string
 }

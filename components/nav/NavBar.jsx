@@ -27,8 +27,8 @@ export const NavBar = () => {
         "
       >
         <div className="hidden xl:block">
-          <Logo width="76" className="text-neutral-lighter mb-4" />
-          <Logo type="logotype" width="160" className="text-neutral-lighter mb-4" />
+          <Logo className="w-24 text-neutral-lighter mb-4" />
+          <Logo type="logotype" width="160" className="w-40 text-neutral-lighter mb-4" />
         </div>
 
         {menu.map((item, index) => {

@@ -18,7 +18,7 @@ export const menu = [
   {
     iconSolid: <MeditateIcon type="solid" />,
     iconOutlined: <MeditateIcon type="outlined"/>,
-    path: "/",
+    path: "/meditate",
     label: "Meditate"
   },
   {

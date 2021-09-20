@@ -17,7 +17,7 @@ export const Select = ({ classContainer, label, className, id, onChange, options
   }
 
   return (
-    <div className={`flex flex-col mb-4 xl:mb-6 ${classContainer}`}>
+    <div className={`flex flex-col ${classContainer}`}>
       {label &&
         <label htmlFor={id}>
           {label}

@@ -4,7 +4,7 @@ import { InputButton } from "."
 
 export const GroupCheckbox = ({ classContainer, label, className, name, onChange, options}) => {
   return (
-    <div className={`flex flex-col mb-4 xl:mb-6 ${classContainer}`}>
+    <div className={`flex flex-col ${classContainer}`}>
       {label &&
         <span className="mb-1 xl:mb-2">
           {label}

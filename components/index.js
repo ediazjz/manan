@@ -3,10 +3,11 @@ export { Layout } from './Layout'
 // SVG
 export { Logo } from './Logo'
 export { Illustration } from './Illustration'
+export * from './CustomIcons'
 
 // Individual omponents
-export { MeditateIcon } from './MeditateIcon'
-export { UsernameSelection } from './UsernameSelection'
+export { LoadingScreen } from './LoadingScreen'
+export { UserAuth } from './UserAuth'
 export { ThemeSwitch } from './ThemeSwitch'
 export { SocialSharing } from './SocialSharing'
 export { WeeklyProgress } from './WeeklyProgress'

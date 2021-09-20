@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export const Textarea = ({ classContainer, label, className, id, name, placehoder, value, onChange, disabled }) => {
   return (
-    <div className={`flex flex-col mb-4 xl:mb-6 ${classContainer}`}>
+    <div className={`flex flex-col ${classContainer}`}>
       {label &&
         <label htmlFor={id}>
           {label}
