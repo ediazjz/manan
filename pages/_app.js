@@ -22,6 +22,6 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 
 MyApp.propTypes = {
-  Component: PropTypes.element,
+  Component: PropTypes.elementType,
   pageProps: PropTypes.object
 }
